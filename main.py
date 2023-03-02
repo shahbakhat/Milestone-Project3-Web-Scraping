@@ -20,3 +20,7 @@ response = requests.get(url)
 # st.write(response) checked the response status and it was successful type 200.
 content = BeautifulSoup(response.content,'html.parser')
 # st.code(content)
+quotes  = content.find_all('div', class_='quote')
+for quote in quotes:
+    text = quote.find('span', class_='text',)
+    author = quote.find('span', class_='author')
