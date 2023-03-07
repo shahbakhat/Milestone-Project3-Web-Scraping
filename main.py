@@ -25,4 +25,4 @@ for quote in quotes:
     text = quote.find('span', class_='text',)
     author = quote.find('small', class_='author')
     link = quote.find('a')
-    
+    st.code(link)
