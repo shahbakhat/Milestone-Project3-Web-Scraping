@@ -22,7 +22,7 @@ content = BeautifulSoup(response.content,'html.parser')
 # st.code(content)
 quotes  = content.find_all('div', class_='quote')
 for quote in quotes:
-    text = quote.find('span', class_='text',)
-    author = quote.find('small', class_='author')
+    text = quote.find('span', class_='text').text
+    author = quote.find('small', class_='author').text
     link = quote.find('a')
-    st.code(link)
+    st.code(link['href'])
