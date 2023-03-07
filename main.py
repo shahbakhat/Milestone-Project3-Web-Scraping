@@ -21,6 +21,7 @@ response = requests.get(url)
 content = BeautifulSoup(response.content,'html.parser')
 # st.code(content)
 quotes  = content.find_all('div', class_='quote')
+quote_file = []
 for quote in quotes:
     text = quote.find('span', class_='text').text
     author = quote.find('small', class_='author').text
