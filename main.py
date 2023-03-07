@@ -13,6 +13,7 @@ my_comment = """STEPS WE ARE TAKING:
 
 #This st.selectbox(with desired options) creates a selection box with a list of options on streamlit server. """
 tags = st.selectbox('Choose a topic', ['love','humor','life','books'])
+generate_csv = st.button('Generate CSV File')
 #Putting the variable {tags} after /tag/ will add the selected option to url such as https://quotes.toscrape.com/tag/humor/
 url = f"https://quotes.toscrape.com/tag/{tags}/"
 #Sending request to url ot get a response.
