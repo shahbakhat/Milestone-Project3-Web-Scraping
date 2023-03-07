@@ -23,4 +23,4 @@ content = BeautifulSoup(response.content,'html.parser')
 quotes  = content.find_all('div', class_='quote')
 for quote in quotes:
     text = quote.find('span', class_='text',)
-    author = quote.find('span', class_='author')
+    author = quote.find('small', class_='author')
