@@ -36,3 +36,9 @@ for quote in quotes:
     # st.code(link['href']) This is the link to quote 'a' tags but only with
     # href excluding the <a> tag. but we need to add the link to the url.
     st.code(f"https://quotes.toscrape.com{link['href']}")
+if generate_csv:
+    try:
+        df = pd.DataFrame(quote_file, columns=['Quotes','Author','Link'])
+        df.to_csv('quotes.csv', index=False , header=['Quotes','Author','Link'])
+    except:
+        st.write('Loading......')
