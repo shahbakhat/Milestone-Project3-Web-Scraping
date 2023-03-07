@@ -24,3 +24,5 @@ quotes  = content.find_all('div', class_='quote')
 for quote in quotes:
     text = quote.find('span', class_='text',)
     author = quote.find('small', class_='author')
+    link = quote.find('a')
+    
