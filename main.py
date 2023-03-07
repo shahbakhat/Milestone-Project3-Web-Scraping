@@ -25,4 +25,8 @@ for quote in quotes:
     text = quote.find('span', class_='text').text
     author = quote.find('small', class_='author').text
     link = quote.find('a')
-    st.code(link['href'])
+    st.success(text)
+    st.write(author)
+    # st.code(link['href']) This is the link to quote 'a' tags but only with
+    # href excluding the <a> tag. but we need to add the link to the url.
+    st.code(f"https://quotes.toscrape.com{link['href']}")
