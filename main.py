@@ -32,7 +32,7 @@ for quote in quotes:
     # Streamlit does allow HTML , so we use unsafe_allow_html=Ture
     #st.markdown displays string formatted as Markdown.
     st.markdown(f"<a href='https://quotes.toscrape.com{link['href']}'>{author}</a>",unsafe_allow_html=True)
-    quote_file.append([text,author,link])
+    quote_file.append([text,author,link['href']])
     # st.code(link['href']) This is the link to quote 'a' tags but only with
     # href excluding the <a> tag. but we need to add the link to the url.
     st.code(f"https://quotes.toscrape.com{link['href']}")
