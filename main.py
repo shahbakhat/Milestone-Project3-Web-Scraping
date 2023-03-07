@@ -26,7 +26,9 @@ for quote in quotes:
     author = quote.find('small', class_='author').text
     link = quote.find('a')
     st.success(text)
-    st.write(author)
+    # st.write(author)
+    # Streamlit does allow HTML , so we use unsafe_allow_html=Ture
+    st.markdown(f"<a href='https://quotes.toscrape.com{link['href']}'>{author}</a>",unsafe_allow_html=True)
     # st.code(link['href']) This is the link to quote 'a' tags but only with
     # href excluding the <a> tag. but we need to add the link to the url.
     st.code(f"https://quotes.toscrape.com{link['href']}")
