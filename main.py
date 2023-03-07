@@ -1,7 +1,7 @@
 import streamlit as st # for visualization and interaction.
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv).
 import requests # for HTML to be displayed and read in text.
-from bs4 import BeautifulSoup # for sxrapping Web pages.
+from bs4 import BeautifulSoup # for scrapping Web pages.
 # Created a variable below for the comment because it was rendered and shown on streamlit.
 my_comment = """STEPS WE ARE TAKING:
 1. Performing a GET request to thr URL.
