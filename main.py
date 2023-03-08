@@ -18,9 +18,9 @@ generate_csv = st.button('Generate CSV File')
 #Putting the variable {tags} after /tag/ will add the selected option to url such as https://quotes.toscrape.com/tag/humor/
 url = f"https://quotes.toscrape.com/tag/{tags}/"
 #Sending request to url ot get a response.
-r = requests.get(url)
+resp= requests.get(url) # pylint: disable=bare-except
 # st.write(response) checked the response status and it was successful type 200.
-content = BeautifulSoup(r.content,'html.parser')
+content = BeautifulSoup(resp.content,'html.parser')
 # st.code(content)
 quotes  = content.find_all('div', class_='quote')
 quote_file = []
