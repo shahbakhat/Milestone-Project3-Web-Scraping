@@ -41,5 +41,5 @@ if generate_csv:
     try:
         df = pd.DataFrame(quote_file, columns=['Quotes','Author','Link'])
         df.to_csv('quotes.csv', index=False , header=['Quotes','Author','Link'])
-    except:
+    except: # pylint: disable=bare-except
         st.write('Loading......')
